@@ -1,0 +1,4 @@
+<interceptor>
+	<class>tooltwist.employeeSystem.interceptors.LoginInterceptor</class>
+	<description>Login Interceptor</description>
+</interceptor>

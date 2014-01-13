@@ -1,0 +1,6 @@
+<widget>
+  <widgetClass>tooltwist.employeeSystem.widgets.NavBarWidget</widgetClass>
+  <idWithinRootWidget>0</idWithinRootWidget>
+  <label>NavBar</label>
+  <description>Navigation Bar</description>
+</widget>

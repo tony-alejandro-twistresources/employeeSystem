@@ -23,12 +23,12 @@
 	XData data = h.getData(jh);
 %>
 
-<form class="form-horizontal">
-<a href="%%homePage%%" class="btn">Home</a>
+<form class="form-horizontal well">
+
 <fieldset>
 
 <!-- Form Name -->
-<legend>Edit Employee Details</legend>
+<legend>Employee Details</legend>
 
 <input type="hidden" name="employeeId" value="<%=h.getEmployeeId()%>">
 
@@ -132,7 +132,6 @@
 <div class="control-group">
   <div class="controls">
    <a href="%%target%%?employeeId=<%= h.getEmployeeId() %>" class="btn">Edit</a>
-<!--     <button id="reset" name="reset" class="btn btn-danger">Reset</button> -->
   </div>
 </div>
 </div>

@@ -25,6 +25,7 @@
 %>
 
 <table class="table table-striped table-bordered table-hover">
+	<caption>Employee Address List</caption>
 	<thead>
 		<tr>
 			<th>Street Address</th>

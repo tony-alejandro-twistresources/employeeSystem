@@ -11,6 +11,15 @@
         <typeAttribute>INTEGER</typeAttribute>
     </attribute>
     <attribute>
+        <name>employeeNumber</name>
+        <sequence>3</sequence>
+        <columnLength>20</columnLength>
+        <uniqueKey>Y</uniqueKey>
+        <description>Employee Number</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
         <name>password</name>
         <sequence>2</sequence>
         <columnLength>50</columnLength>
@@ -21,7 +30,6 @@
     <attribute>
         <name>userId</name>
         <sequence>0</sequence>
-        <uniqueKey>Y</uniqueKey>
         <primaryKey>Y</primaryKey>
         <typeScopeType>P</typeScopeType>
         <typeAttribute>IDENTITY</typeAttribute>

@@ -1,0 +1,4 @@
+<requestHandler>
+	<class>tooltwist.employeeSystem.requestHandlers.LoginFormRequestHandler</class>
+	<description>Login Form Request Handler</description>
+</requestHandler>

@@ -25,6 +25,7 @@
 %>
 
 <table class="table table-striped table-bordered table-hover">
+	<caption>Employee Contact Information</caption>
 	<thead>
 		<tr>
 			<th>Details</th>

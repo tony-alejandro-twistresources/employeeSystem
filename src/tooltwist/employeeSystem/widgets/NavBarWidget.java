@@ -2,38 +2,40 @@ package tooltwist.employeeSystem.widgets;
 
 import tooltwist.wbd.CodeInserter;
 import tooltwist.wbd.CodeInserterList;
-import tooltwist.wbd.CodeInsertionPosition;
-import tooltwist.wbd.JavascriptLinkInserter;
+import tooltwist.wbd.JavascriptCodeInserter;
+import tooltwist.wbd.PageImportCodeInserter;
 import tooltwist.wbd.SnippetParam;
-import tooltwist.wbd.StylesheetLinkInserter;
+import tooltwist.wbd.StylesheetCodeInserter;
 import tooltwist.wbd.WbdException;
 import tooltwist.wbd.WbdGenerator;
 import tooltwist.wbd.WbdGenerator.GenerationMode;
+import tooltwist.wbd.WbdNavPointProperty;
 import tooltwist.wbd.WbdRenderHelper;
 import tooltwist.wbd.WbdSizeInfo;
 import tooltwist.wbd.WbdStringProperty;
 import tooltwist.wbd.WbdWidget;
 import tooltwist.wbd.WbdWidgetController;
-
+import tooltwist.wbd.WbdProductionHelper;
+import tooltwist.employeeSystem.productionHelpers.NavBarProductionHelper;
 import com.dinaa.ui.UimData;
 import com.dinaa.ui.UimHelper;
 
 /**
- * Adds bootstrap functionality to the page
+ * Navigation Bar
  */
-public class BootstrapWidget extends WbdWidgetController
+public class NavBarWidget extends WbdWidgetController
 {
-	private static final String SNIPPET_PREVIEW = "bootstrap_preview.html";
-	private static final String SNIPPET_DESIGN = "bootstrap_design.html";
-	private static final String SNIPPET_PRODUCTION = "bootstrap_production.jsp";
-	private static final boolean USE_PRODUCTION_HELPER = false;
+	private static final String SNIPPET_PREVIEW = "navBar_preview.html";
+	private static final String SNIPPET_DESIGN = "navBar_design.html";
+	private static final String SNIPPET_PRODUCTION = "navBar_production.jsp";
+	private static final boolean USE_PRODUCTION_HELPER = true;
 
 	@Override
 	protected void init(WbdWidget instance) throws WbdException
 	{
 		instance.defineProperty(new WbdStringProperty("elementId", null, "Id", ""));
 //		instance.defineProperty(new WbdStringProperty("myProperty", null, "My Property", ""));
-//		instance.defineProperty(new WbdNavPointProperty("navpoint", null, "Navpoint", ""));
+		instance.defineProperty(new WbdNavPointProperty("target", null, "Target Navpoint", ""));
 	}
 	
 	@Override
@@ -46,8 +48,8 @@ public class BootstrapWidget extends WbdWidgetController
 			// Add code inserters for design mode
 			CodeInserter[] arr = {
 
-//				// Include a CSS snippet
-//				new StylesheetCodeInserter(instance.miscellaneousFilePath(generator, "bootstrap_cssHeader.css")),
+				// Include a CSS snippet
+				new StylesheetCodeInserter(generator, instance, "navBar_cssHeader.css"),
 			};
 			codeInserterList.add(arr);
 		}
@@ -61,11 +63,11 @@ public class BootstrapWidget extends WbdWidgetController
 //				// Link to an external stylesheet
 //				new StylesheetLinkInserter(cssUrl),
 
-//				// Include a javascript snippet 
-//				new JavascriptCodeInserter(instance.miscellaneousFilePath(generator, "bootstrap_jsHeader.js")),
+				// Include a javascript snippet 
+				new JavascriptCodeInserter(generator, instance, "navBar_jsHeader.js"),
 
-//				// Include a CSS snippet
-//				new StylesheetCodeInserter(instance.miscellaneousFilePath(generator, "bootstrap_cssHeader.css")),
+				// Include a CSS snippet
+				new StylesheetCodeInserter(generator, instance, "navBar_cssHeader.css"),
 			};
 			codeInserterList.add(arr);
 		}
@@ -73,20 +75,28 @@ public class BootstrapWidget extends WbdWidgetController
 		{
 			// Add code inserters for production mode
 			CodeInserter[] arr = {
-					new StylesheetLinkInserter("/ttsvr/css/bootstrap.min.css"), 
-					new StylesheetLinkInserter("/ttsvr/css/smoothness/jquery-ui-1.10.3.custom.min.css"), 
-					new JavascriptLinkInserter("/ttsvr/js/response.min.js", CodeInsertionPosition.HEADER), 
-					new JavascriptLinkInserter("/ttsvr/js/1-jquery-1.10.2.min.js", CodeInsertionPosition.BOTTOM),
-					new JavascriptLinkInserter("/ttsvr/js/2-bootstrap.min.js", CodeInsertionPosition.BOTTOM),
-					new JavascriptLinkInserter("/ttsvr/js/3-jquery-ui-1.10.3.custom.min.js", CodeInsertionPosition.BOTTOM)
-					};
+//				// Link to an external Javascript file
+//				new JavascriptLinkInserter(jsUrl),
+					
+//				// Link to an external stylesheet
+//				new StylesheetLinkInserter(cssUrl),
+					
+				// Include a javascript snippet 
+				new JavascriptCodeInserter(generator, instance, "navBar_jsHeader.js"),
+					
+				// Include a CSS snippet
+				new StylesheetCodeInserter(generator, instance, "navBar_cssHeader.css"),
+
+//				// Add import statements to the JSP
+//				new PageImportCodeInserter(XData.class.getName()),
+			};
 			codeInserterList.add(arr);
 
 			if (USE_PRODUCTION_HELPER)
 			{
 				SnippetParam[] productionHelperParams = null;
-//				codeInserterList.add(WbdProductionHelper.codeInserter(instance, BootstrapProductionHelper.class.getName(), productionHelperParams));
-//				codeInserterList.add(new PageImportCodeInserter(BootstrapProductionHelper.class.getName()));
+				codeInserterList.add(WbdProductionHelper.codeInserter(instance, NavBarProductionHelper.class.getName(), productionHelperParams));
+				codeInserterList.add(new PageImportCodeInserter(NavBarProductionHelper.class.getName()));
 			}
 		}
 
@@ -95,7 +105,7 @@ public class BootstrapWidget extends WbdWidgetController
 	@Override
 	public String getLabel(WbdWidget instance) throws WbdException
 	{
-		return "Bootstrap";
+		return "NavBar";
 	}
 	
 	@Override
@@ -126,10 +136,10 @@ public class BootstrapWidget extends WbdWidgetController
 	
 	private SnippetParam[] getSnippetParams(WbdGenerator generator, WbdWidget instance, UimData ud) throws WbdException {
 //		String myProperty = instance.getProperty("myProperty", null);
-//		String myNavpoint = instance.getProperty("myNavpoint", null);
+		String target = instance.getProperty("target", null);
 		SnippetParam[] params = {
 //			new SnippetParam("myProperty", myProperty),
-//			new SnippetParam("myNavpoint", myNavpoint)
+			new SnippetParam("target", target)
 		};
 		return params;
 	}

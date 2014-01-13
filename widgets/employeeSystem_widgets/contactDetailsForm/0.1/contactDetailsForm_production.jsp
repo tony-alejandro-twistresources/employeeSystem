@@ -22,7 +22,7 @@
 	XData data = h.getData(jh);
 %>
 
-<form method="post" class="form-horizontal">
+<form method="post" class="form-horizontal well">
 
 <input type="hidden" name="op" value="employeeSystem_widgets.contactDetailsForm.contactDetailsForm" />
 <input type="hidden" name="employeeId" value="<%=h.getEmployeeId()%>" />
@@ -37,7 +37,7 @@
 <div class="control-group">
   <label class="control-label" for="contactType">Type:</label>
   <div class="controls">
-    <input id="contactType" name="contactType" type="text"  value="<%=h.getContactType()%>" placeholder="Enter Contact Information Type" class="input-xxlarge" required="">
+    <input id="contactType" name="contactType" type="text"  value="<%=h.getContactType()%>" placeholder="Enter Contact Information Type" class="input-large" required="">
   </div>
 </div>
 
@@ -45,7 +45,7 @@
 <div class="control-group">
   <label class="control-label" for="contactDetails">Details:</label>
   <div class="controls">
-    <input id="contactDetails" name="contactDetails" type="text" value="<%=h.getContactDetails()%>" placeholder="Enter Contact Information Details" class="input-xlarge" required="">
+    <input id="contactDetails" name="contactDetails" type="text" value="<%=h.getContactDetails()%>" placeholder="Enter Contact Information Details" class="input-large" required="">
     
   </div>
 </div>
@@ -54,6 +54,7 @@
 <div class="control-group">
   <div class="controls">
     <input type="submit" name="submit" class="btn btn-success" value="Submit" />
+    <a href="%%parent%%?employeeId=<%= h.getEmployeeId() %>" class="btn btn-danger">Cancel</a>
   </div>
 </div>
 

@@ -22,7 +22,7 @@
 	XData data = h.getData(jh);
 %>
 
-<form method="post" class="form-horizontal">
+<form method="post" class="form-horizontal well">
 <fieldset>
 
 <!-- Form Name -->
@@ -178,7 +178,7 @@
 <div class="control-group">
   <div class="controls">
     <input type="submit" name="submit" class="btn btn-success" value="Submit" />
-<!--     <button id="reset" name="reset" class="btn btn-danger">Reset</button> -->
+    <a href="%%parent%%?employeeId=<%= h.getEmployeeId() %>" class="btn btn-danger">Cancel</a>
   </div>
 </div>
 </div>

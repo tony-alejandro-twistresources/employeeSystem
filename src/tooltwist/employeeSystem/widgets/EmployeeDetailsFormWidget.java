@@ -3,16 +3,14 @@ package tooltwist.employeeSystem.widgets;
 import tooltwist.employeeSystem.productionHelpers.EmployeeDetailsFormProductionHelper;
 import tooltwist.wbd.CodeInserter;
 import tooltwist.wbd.CodeInserterList;
-import tooltwist.wbd.CodeInsertionPosition;
 import tooltwist.wbd.JavascriptCodeInserter;
-import tooltwist.wbd.JavascriptLinkInserter;
 import tooltwist.wbd.PageImportCodeInserter;
 import tooltwist.wbd.SnippetParam;
 import tooltwist.wbd.StylesheetCodeInserter;
-import tooltwist.wbd.StylesheetLinkInserter;
 import tooltwist.wbd.WbdException;
 import tooltwist.wbd.WbdGenerator;
 import tooltwist.wbd.WbdGenerator.GenerationMode;
+import tooltwist.wbd.WbdNavPointProperty;
 import tooltwist.wbd.WbdProductionHelper;
 import tooltwist.wbd.WbdRenderHelper;
 import tooltwist.wbd.WbdSizeInfo;
@@ -37,8 +35,7 @@ public class EmployeeDetailsFormWidget extends WbdWidgetController {
 		instance.defineProperty(new WbdStringProperty("elementId", null, "Id", ""));
 		// instance.defineProperty(new WbdStringProperty("myProperty", null,
 		// "My Property", ""));
-		// instance.defineProperty(new WbdNavPointProperty("navpoint", null,
-		// "Navpoint", ""));
+		 instance.defineProperty(new WbdNavPointProperty("parent", null, "Parent Navpoint", ""));
 	}
 
 	@Override
@@ -70,10 +67,7 @@ public class EmployeeDetailsFormWidget extends WbdWidgetController {
 		} else if (mode == GenerationMode.PRODUCTION || generator.getMode() == GenerationMode.CONTROLLER) {
 			// Add code inserters for production mode
 			CodeInserter[] arr = { 
-//					new StylesheetLinkInserter("/ttsvr/css/bootstrap.min.css"), 
-//					new JavascriptLinkInserter("/ttsvr/js/response.min.js", CodeInsertionPosition.HEADER),
-//					new JavascriptLinkInserter("/ttsvr/js/bootstrap.min.js", CodeInsertionPosition.BOTTOM), 
-//					new JavascriptLinkInserter("/ttsvr/js/jquery-1.10.2.min.js", CodeInsertionPosition.BOTTOM) 		
+					new JavascriptCodeInserter(generator, instance, "employeeDetailsForm_jsHeader.js")		
 			};
 			codeInserterList.add(arr);
 
@@ -115,10 +109,10 @@ public class EmployeeDetailsFormWidget extends WbdWidgetController {
 
 	private SnippetParam[] getSnippetParams(WbdGenerator generator, WbdWidget instance, UimData ud) throws WbdException {
 		// String myProperty = instance.getProperty("myProperty", null);
-		// String myNavpoint = instance.getProperty("myNavpoint", null);
+		 String parent = instance.getProperty("parent", null);
 		SnippetParam[] params = {
 		// new SnippetParam("myProperty", myProperty),
-		// new SnippetParam("myNavpoint", myNavpoint)
+		 new SnippetParam("parent", parent)
 		};
 		return params;
 	}

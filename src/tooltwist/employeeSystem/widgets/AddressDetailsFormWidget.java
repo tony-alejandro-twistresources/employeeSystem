@@ -35,7 +35,7 @@ public class AddressDetailsFormWidget extends WbdWidgetController
 	{
 		instance.defineProperty(new WbdStringProperty("elementId", null, "Id", ""));
 //		instance.defineProperty(new WbdStringProperty("myProperty", null, "My Property", ""));
-//		instance.defineProperty(new WbdNavPointProperty("navpoint", null, "Navpoint", ""));
+		instance.defineProperty(new WbdNavPointProperty("parent", null, "Parent Navpoint", ""));
 	}
 	
 	@Override
@@ -136,10 +136,10 @@ public class AddressDetailsFormWidget extends WbdWidgetController
 	
 	private SnippetParam[] getSnippetParams(WbdGenerator generator, WbdWidget instance, UimData ud) throws WbdException {
 //		String myProperty = instance.getProperty("myProperty", null);
-//		String myNavpoint = instance.getProperty("myNavpoint", null);
+		String parent = instance.getProperty("parent", null);
 		SnippetParam[] params = {
 //			new SnippetParam("myProperty", myProperty),
-//			new SnippetParam("myNavpoint", myNavpoint)
+			new SnippetParam("parent", parent)
 		};
 		return params;
 	}
