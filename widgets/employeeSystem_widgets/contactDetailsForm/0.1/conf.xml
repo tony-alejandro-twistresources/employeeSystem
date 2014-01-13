@@ -1,0 +1,6 @@
+<widget>
+  <widgetClass>tooltwist.employeeSystem.widgets.ContactDetailsFormWidget</widgetClass>
+  <idWithinRootWidget>0</idWithinRootWidget>
+  <label>Contact Form</label>
+  <description>Contact Details Form Widget</description>
+</widget>

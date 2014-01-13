@@ -1,0 +1,4 @@
+<requestHandler>
+	<class>tooltwist.employeeSystem.requestHandlers.EmployeeDetailsFormRequestHandler</class>
+	<description>Insert or update Employee Details</description>
+</requestHandler>

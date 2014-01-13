@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<entity>
+    <tableName>employee_system_user</tableName>
+    <longName>Employee System User Credentials</longName>
+    <attribute>
+        <name>employeeId</name>
+        <sequence>1</sequence>
+        <description>Foreign key to Employee Information Table</description>
+        <linkedEntity>employee</linkedEntity>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>INTEGER</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>password</name>
+        <sequence>2</sequence>
+        <columnLength>50</columnLength>
+        <description>Employee System Password</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>userId</name>
+        <sequence>0</sequence>
+        <uniqueKey>Y</uniqueKey>
+        <primaryKey>Y</primaryKey>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>IDENTITY</typeAttribute>
+    </attribute>
+</entity>

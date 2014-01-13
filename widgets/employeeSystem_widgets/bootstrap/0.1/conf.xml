@@ -1,0 +1,6 @@
+<widget>
+  <widgetClass>tooltwist.employeeSystem.widgets.BootstrapWidget</widgetClass>
+  <idWithinRootWidget>0</idWithinRootWidget>
+  <label>Bootstrap</label>
+  <description>Adds bootstrap functionality to the page</description>
+</widget>

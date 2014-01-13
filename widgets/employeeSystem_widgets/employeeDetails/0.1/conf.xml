@@ -1,0 +1,6 @@
+<widget>
+  <widgetClass>tooltwist.employeeSystem.widgets.EmployeeDetailsWidget</widgetClass>
+  <idWithinRootWidget>0</idWithinRootWidget>
+  <label>Employee Details</label>
+  <description>Employee Details Widget</description>
+</widget>

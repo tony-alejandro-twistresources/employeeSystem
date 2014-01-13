@@ -1,0 +1,4 @@
+<requestHandler>
+	<class>tooltwist.employeeSystem.requestHandlers.ContactDetailsFormRequestHandler</class>
+	<description>Contact Details Form Maintenance</description>
+</requestHandler>

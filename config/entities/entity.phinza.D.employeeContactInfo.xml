@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<entity>
+    <tableName>employee_contact_info</tableName>
+    <longName>Employee System Contact Information</longName>
+    <attribute>
+        <name>contactDetails</name>
+        <sequence>3</sequence>
+        <columnLength>50</columnLength>
+        <description>The contact details for this contact information.</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>contactId</name>
+        <sequence>0</sequence>
+        <uniqueKey>Y</uniqueKey>
+        <primaryKey>Y</primaryKey>
+        <description>Employee Contact Information ID</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>IDENTITY</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>contactType</name>
+        <sequence>2</sequence>
+        <columnLength>20</columnLength>
+        <description>The type of contact information entered</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>employeeId</name>
+        <sequence>1</sequence>
+        <description>Employee ID who owns this Contact Info</description>
+        <linkedEntity>employee</linkedEntity>
+    </attribute>
+</entity>

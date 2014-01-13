@@ -1,0 +1,4 @@
+<requestHandler>
+	<class>tooltwist.employeeSystem.requestHandlers.AddressDetailsRequestHandler</class>
+	<description>Address Details Maintenance</description>
+</requestHandler>

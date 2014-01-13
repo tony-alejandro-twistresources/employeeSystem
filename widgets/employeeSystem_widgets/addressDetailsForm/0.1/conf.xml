@@ -1,0 +1,6 @@
+<widget>
+  <widgetClass>tooltwist.employeeSystem.widgets.AddressDetailsFormWidget</widgetClass>
+  <idWithinRootWidget>0</idWithinRootWidget>
+  <label>Address Form</label>
+  <description>Address Details Editable Form</description>
+</widget>

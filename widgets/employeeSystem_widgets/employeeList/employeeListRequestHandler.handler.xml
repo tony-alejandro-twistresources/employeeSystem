@@ -1,0 +1,4 @@
+<requestHandler>
+	<class>tooltwist.employeeSystem.requestHandlers.EmployeeListRequestHandlerRequestHandler</class>
+	<description>Employee List Request Handler</description>
+</requestHandler>

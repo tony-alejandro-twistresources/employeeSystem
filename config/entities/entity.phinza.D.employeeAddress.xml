@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<entity>
+    <tableName>employee_address</tableName>
+    <longName>Employee Address Information</longName>
+    <attribute>
+        <name>addressId</name>
+        <sequence>0</sequence>
+        <uniqueKey>Y</uniqueKey>
+        <primaryKey>Y</primaryKey>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>IDENTITY</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>city</name>
+        <sequence>3</sequence>
+        <columnLength>50</columnLength>
+        <description>Employee's Address City</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>employeeId</name>
+        <sequence>1</sequence>
+        <linkedEntity>employee</linkedEntity>
+    </attribute>
+    <attribute>
+        <name>stateProvince</name>
+        <sequence>4</sequence>
+        <columnLength>50</columnLength>
+        <description>Employee Address State or Province</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>streetAddress</name>
+        <sequence>2</sequence>
+        <columnLength>250</columnLength>
+        <description>Employee's Street Address</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>zipcode</name>
+        <sequence>5</sequence>
+        <columnLength>15</columnLength>
+        <description>Employee Address Zip Code</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+</entity>

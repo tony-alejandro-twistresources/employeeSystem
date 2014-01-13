@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<entity>
+    <tableName>employee_information</tableName>
+    <longName>Employee Information</longName>
+    <attribute>
+        <name>birthdate</name>
+        <sequence>5</sequence>
+        <columnLength>10</columnLength>
+        <description>Employee Birthdate</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>employeeId</name>
+        <sequence>0</sequence>
+        <primaryKey>Y</primaryKey>
+        <description>Employee ID</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>IDENTITY</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>employeeNumber</name>
+        <sequence>1</sequence>
+        <columnLength>20</columnLength>
+        <uniqueKey>Y</uniqueKey>
+        <description>Employee Number</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>firstName</name>
+        <sequence>2</sequence>
+        <columnLength>50</columnLength>
+        <description>Employee First Name</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>gender</name>
+        <sequence>6</sequence>
+        <columnLength>10</columnLength>
+        <description>Employee Gender</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+        <allowableValue>
+            <value>F</value>
+            <description>Female</description>
+            <hide>N</hide>
+        </allowableValue>
+        <allowableValue>
+            <value>M</value>
+            <description>Male</description>
+            <hide>N</hide>
+        </allowableValue>
+    </attribute>
+    <attribute>
+        <name>hdmfId</name>
+        <sequence>10</sequence>
+        <columnLength>25</columnLength>
+        <description>Employee Pag-IBIG Fund Member ID</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>lastName</name>
+        <sequence>4</sequence>
+        <columnLength>50</columnLength>
+        <description>Employee Last Name</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>middleName</name>
+        <sequence>3</sequence>
+        <columnLength>50</columnLength>
+        <description>Employee Middle Name</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>philhealthId</name>
+        <sequence>11</sequence>
+        <columnLength>25</columnLength>
+        <description>Employee PhilHealth Member ID</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>position</name>
+        <sequence>8</sequence>
+        <columnLength>100</columnLength>
+        <description>Employee Position</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>sssId</name>
+        <sequence>9</sequence>
+        <columnLength>12</columnLength>
+        <description>Employee Social Security Number</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+    <attribute>
+        <name>status</name>
+        <sequence>7</sequence>
+        <columnLength>25</columnLength>
+        <description>Employee Status</description>
+        <typeScopeType>P</typeScopeType>
+        <typeAttribute>VARCHAR</typeAttribute>
+    </attribute>
+</entity>
